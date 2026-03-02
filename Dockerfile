@@ -1,2 +1,3 @@
 FROM alpine:latest
-CMD ["echo", "Hello from Alpine!"]
+RUN apk add --no-cache busybox-extras
+CMD ["sh", "-c", "echo 'Hello World' > index.html && httpd -f -p 8080"]
